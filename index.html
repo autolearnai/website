@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLearn - Experiments in Self-Improving AI Agents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+    <!-- Background gradient -->
+    <div class="fixed inset-0 bg-gradient-to-br from-slate-900/30 via-gray-900/20 to-zinc-900/30 animate-gradient bg-[length:400%_400%]"></div>
+    
+
+    <!-- Navigation -->
+    <div id="navbar-container" class="relative">
+        <nav id="navbar" class="relative z-50 px-6 py-4 border-b border-gray-800/50 backdrop-blur-xl transition-all duration-500 ease-out">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                  <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-slate-600 rounded-lg flex items-center justify-center">
+                      <span class="text-white font-bold text-sm">AL</span>
+                  </div>
+                  <a href="/" class="text-xl font-bold">AutoLearn</a>
+              </div>
+              <div class="hidden md:flex items-center space-x-8">
+                  <a href="#experiments" class="text-gray-300 hover:text-white transition-colors">Experiments</a>
+                  <a href="https://github.com/autolearnai/autolearn" target="_blank" class="bg-emerald-600 px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition-all duration-200">
+                      GitHub
+                  </a>
+              </div>
+          </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 pt-20 pb-32 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 bg-gradient-to-r from-emerald-400 via-slate-300 to-blue-400 bg-clip-text text-transparent leading-tight tracking-tight">
+                    Experiments in
+                    <br>Self-Improving AI Agents
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed font-medium">
+                    AutoLearn is a collection of experiments exploring how AI agents can learn, adapt, and improve themselves 
+                    through <span class="text-emerald-400 font-semibold">autonomous skill development</span> and <span class="text-blue-400 font-semibold">managed memory systems</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiments Section -->
+    <section id="experiments" class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-emerald-400 to-slate-300 bg-clip-text text-transparent">Active Experiments</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Each experiment explores a different approach to making AI agents more capable, reliable, and autonomous.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- AutoLearn MCP -->
+                <a href="mcp/" class="group">
+                    <div class="bg-gradient-to-br from-emerald-900/30 to-slate-900/30 border border-emerald-500/30 rounded-2xl p-8 backdrop-blur-xl hover:bg-emerald-900/40 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-2 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-emerald-400">AutoLearn MCP</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            What happens when you make an MCP server dynamic and add a coding agent to determine how to improve its own skills based on reasoning traces?
+                        </p>
+                        <p class="text-sm text-gray-400 mb-6">
+                            An MCP server that automatically converts AI agent reasoning steps into deterministic, reusable code. Each agent builds its own skill library through autonomous learning.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 rounded-lg text-xs text-emerald-300">MCP Server</span>
+                            <span class="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 rounded-lg text-xs text-emerald-300">Code Crystallization</span>
+                            <span class="px-3 py-1 bg-emerald-900/50 border border-emerald-500/30 rounded-lg text-xs text-emerald-300">Self-Improvement</span>
+                        </div>
+                        <div class="text-emerald-400 font-semibold group-hover:text-emerald-300 transition-colors">
+                            Explore Experiment →
+                        </div>
+                    </div>
+                </a>
+
+                <!-- AutoLearn School -->
+                <a href="school/" class="group">
+                    <div class="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-2xl p-8 backdrop-blur-xl hover:bg-blue-900/40 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-400">AutoLearn School</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            What happens when you have a teacher agent teach a student with memory (managed context) and then test those agents like you would students in school?
+                        </p>
+                        <p class="text-sm text-gray-400 mb-6">
+                            An educational system where teacher agents instruct student agents with managed memory, creating persistent learning that can be evaluated through structured testing—just like real education.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-900/50 border border-blue-500/30 rounded-lg text-xs text-blue-300">Teacher-Student</span>
+                            <span class="px-3 py-1 bg-blue-900/50 border border-blue-500/30 rounded-lg text-xs text-blue-300">Managed Memory</span>
+                            <span class="px-3 py-1 bg-blue-900/50 border border-blue-500/30 rounded-lg text-xs text-blue-300">Testing & Evaluation</span>
+                        </div>
+                        <div class="text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
+                            Explore Experiment →
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="relative z-10 py-20 px-6 bg-gray-800/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-slate-300 to-gray-400 bg-clip-text text-transparent">The Vision</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Traditional AI agents are static—they perform the same way every time, limited by their initial training. 
+                    AutoLearn explores how agents can evolve beyond their initial capabilities.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/30 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-xl">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Autonomous Learning</h3>
+                    <p class="text-gray-300">Agents that observe their own behavior, identify patterns, and develop new capabilities without manual intervention.</p>
+                </div>
+
+                <div class="bg-gray-800/30 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-xl">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Persistent Memory</h3>
+                    <p class="text-gray-300">Managed context systems that allow agents to retain and build upon knowledge across interactions, creating true learning.</p>
+                </div>
+
+                <div class="bg-gray-800/30 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-xl">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Measurable Progress</h3>
+                    <p class="text-gray-300">Structured evaluation systems that track agent improvement over time, validating that learning is actually occurring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative z-10 py-20 px-6 bg-gradient-to-r from-slate-900/30 to-gray-900/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+              Explore the Experiments
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Each experiment is open source and actively being developed. 
+              Join us in exploring the future of self-improving AI agents.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://github.com/autolearnai/autolearn" target="_blank" class="bg-emerald-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-emerald-700 transition-all duration-200 shadow-lg hover:shadow-emerald-500/25">
+                  View on GitHub
+              </a>
+              <a href="#experiments" class="border border-gray-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 hover:border-gray-500 transition-all duration-200">
+                  Browse Experiments
+              </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-gray-800 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-emerald-500 to-slate-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">AL</span>
+                        </div>
+                        <span class="text-xl font-bold">AutoLearn</span>
+                    </div>
+                    <p class="text-gray-400">Experiments in self-improving AI agents.</p>
+                </div>
+                <div></div>
+                <div>
+                    <h4 class="font-semibold mb-4">Experiments</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <a href="mcp/" class="block hover:text-white transition-colors">AutoLearn MCP</a>
+                        <a href="school/" class="block hover:text-white transition-colors">AutoLearn School</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Developers</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <a href="https://github.com/autolearnai/autolearn" target="_blank" class="block hover:text-white transition-colors">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AutoLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar transition effect
+        const navbar = document.getElementById('navbar');
+        const navbarContainer = document.getElementById('navbar-container');
+        let isFloating = false;
+        
+        // Store the original height
+        const originalHeight = navbar.offsetHeight;
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 50 && !isFloating) {
+                // Set container height before transition to prevent jump
+                navbarContainer.style.height = originalHeight + 'px';
+                
+                // Transform to floating container
+                navbar.className = 'fixed top-4 left-6 right-6 z-50 px-6 py-3 rounded-2xl bg-gray-900/80 backdrop-blur-xl border border-gray-700/30 shadow-2xl transition-all duration-500 ease-out';
+                navbar.style.maxWidth = '1400px';
+                navbar.style.margin = '0 auto';
+                
+                isFloating = true;
+            } else if (scrollY <= 50 && isFloating) {
+                // Return to full navbar
+                navbar.className = 'relative z-50 px-6 py-4 border-b border-gray-800/50 backdrop-blur-xl transition-all duration-500 ease-out';
+                navbar.style.maxWidth = '';
+                navbar.style.width = '';
+                navbar.style.margin = '';
+                
+                // Reset container height
+                navbarContainer.style.height = '';
+                
+                isFloating = false;
+            }
+        });
+    </script>
+</body>
+</html>
